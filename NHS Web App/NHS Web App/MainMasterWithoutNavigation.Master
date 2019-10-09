@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMasterWithoutNavigation.master.cs" Inherits="NHS_Web_App.MainMasterWithoutNavigation" %>
+
+<!DOCTYPE html>
+
+<html style="overflow-x: hidden;">
+<head runat="server">
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css' />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- Style sheets -->
+    <link href="/Styles/reset.css" rel="stylesheet" />
+    <link href="/Styles/style.css" rel="stylesheet" />
+    <link href="/Styles/custom-style.css" rel="stylesheet" />
+    <link href="Styles/tables.css" rel="stylesheet" />
+    <link href="Styles/other-controls.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="mainForm" runat="server">
+        <main class="nhs-main-content">
+            <div class="content-wrapper noside">
+                <asp:Panel runat="server" ID="default_msg_container" CssClass="msg-container" ClientIDMode="Static"></asp:Panel>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </main>
+    </form>
+    <script src="/js/elements.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js" integrity="sha256-vyehT44mCOPZg7SbqfOZ0HNYXjPKgBCaqxBkW3lh6bg=" crossorigin="anonymous"></script>
+</body>
+</html>

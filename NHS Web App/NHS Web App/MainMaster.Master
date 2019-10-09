@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="NHS_Web_App.MainMaster" %>
+
+<%@ Import Namespace="DataLayer" %>
+
+<!DOCTYPE html>
+
+<html class="fontawesome-i2svg-pending">
+<head runat="server" style="overflow-x: hidden;">
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css' />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- Style sheets -->
+    <link href="/Styles/reset.css" rel="stylesheet" />
+    <link href="/Styles/style.css" rel="stylesheet" />
+    <link href="/Styles/custom-style.css" rel="stylesheet" />
+    <link href="/Styles/animate.css" rel="stylesheet" />
+    <link href="Styles/other-controls.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="mainForm" runat="server" style="overflow-x: hidden; padding-bottom: 1.8em !important; height: auto !important; min-height: unset !important;">
+        <header class="nhs-main-header">
+            <a href="<%= Helper.PageAddress(Helper.Pages.OVERVIEW) %>" class="nhs-logo">
+                <img src="/img/nhs-logo.svg" alt="NHS Logo" title="Return Home" />
+            </a>
+
+            <%-- Start of nhs-search --%>
+            <%-- Display Search box if permissions permit--%>
+
+            <asp:Panel runat="server" ID="searchbox" CssClass="nhs-search is-hidden" DefaultButton="btnSearch">
+                <asp:TextBox CausesValidation="false" formnovalidate="formnovalidate" runat="server" ID="search_box" onkeydown="return (event.keyCode!=0);" AutoCompleteType="Search" type="search" placeholder="Search..." />
+                <asp:Button CausesValidation="false" formnovalidate="formnovalidate" Text="" Style="display: none;" ID="btnSearch" OnClick="btnSearch_Click" runat="server" />
+            </asp:Panel>
+
+            <%-- End of nhs-search --%>
+
+            <a href="#0" class="nhs-nav-trigger">Menu<span></span></a>
+
+            <nav class="nhs-nav">
+                <ul class="nhs-top-nav">
+                    <asp:ContentPlaceHolder ID="topActionButtons" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <li class="has-children account topmost">
+                        <a href="#"><span style="margin: 0; padding-right: 12px; display: inline-block;"><i class="fas fa-user"></i></span>Hi, <%= BasePage().LoggedInUser.Forename %> <%= BasePage().LoggedInUser.Surname %></a>
+                        <ul>
+                            <%--<li><a href="<%= Helper.PageAddress(Helper.Pages.ACCOUNT) %>">My Account</a></li>--%>
+                            <li><a href="<%= Helper.PageAddress(Helper.Pages.CHANGE_PASSWORD) %>">Change Password</a></li>
+                            <li><a href="<%= Helper.PageAddress(Helper.Pages.LOGOUT) %>">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- .nhs-main-header -->
+        <main class="nhs-main-content">
+            <nav class="nhs-side-nav">
+                <ul class="side-elements">
+                    <li class="nhs-label practice"><%= BasePage().LoggedInUser.Practice_Info.Name %></li>
+                    <li class="nhs-label">Get Started</li>
+                    <% if (!(BasePage().GetRole() == NHS_Web_App.BasePage.ROLES.RECEPTIONIST))
+                        { %>
+                    <li data-page="default" class="">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.OVERVIEW) %>"><span class="icon"><i class="fas fa-eye"></i></span>Overview</a>
+                    </li>
+                    <% } %>
+                    <%-- Display Appointments Page Link --%>
+                    <% if (BasePage().HasPermission(NHS_Web_App.BasePage.Permissions.VIEW_APPOINTMENTS))
+                        { %>
+                    <li data-page="appointments" class="<%--has-children--%>">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.APPOINTMENTS) %>"><span class="icon"><i class="fas fa-calendar"></i></span>Appointments</a>
+                    </li>
+                    <% } %>
+                    <%-- Display Patients Page Link --%>
+                    <% if (BasePage().HasPermission(NHS_Web_App.BasePage.Permissions.VIEW_PATIENTS))
+                        {%>
+                    <li data-page="patients" class="">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.PATIENTS) %>"><span class="icon"><i class="fas fa-users"></i></span>People</a>
+                    </li>
+                    <% } %>
+                    <%-- Display Medicines Page Link --%>
+                    <% if (BasePage().HasPermission(NHS_Web_App.BasePage.Permissions.VIEW_MEDICINES))
+                        {%>
+                    <li data-page="medicines" class="">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.MEDICINES) %>"><span class="icon"><i class="fas fa-medkit"></i></span>Medicines & more</a>
+                    </li>
+                    <% } %>
+                    <%-- Display Staff Page Link --%>
+                    <% if (BasePage().HasPermission(NHS_Web_App.BasePage.Permissions.VIEW_STAFF))
+                        {%>
+                    <li data-page="staff" class="">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.STAFF) %>"><span class="icon"><i class="fas fa-address-card"></i></span>Staff</a>
+                    </li>
+                    <% } %>
+                    <%-- Display Reports Page Link --%>
+                    <%--<% if (BasePage().HasPermission(NHS_Web_App.BasePage.Permissions.VIEW_REPORTS))
+                        {%>
+                    <li data-page="reports" class="">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.REPORTS) %>"><span class="icon"><i class="fas fa-chart-pie"></i></span>Reports</a>
+                    </li>
+                    <% } %>--%>
+                    <%-- Display Contact Page Link --%>
+                    <% if (BasePage().HasPermission(NHS_Web_App.BasePage.Permissions.VIEW_CONTACTS))
+                        {%>
+                    <li data-page="contact" class="">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.CONTACT) %>"><span class="icon"><i class="fas fa-at"></i></span>Contact</a>
+                    </li>
+                    <% } %>
+
+                    <% if (BasePage().HasPermission() && !BasePage().DB.UserIsStaff(BasePage().LoggedInUser))
+                        { %>
+                    <li data-page="findus" class="">
+                        <a href="<%= Helper.PageAddress(Helper.Pages.FIND_US) %>"><span class="icon"><i class="fas fa-map"></i></span>Find us</a>
+                    </li>
+                    <%} %>
+                </ul>
+                <%-- Display Queue Page Link --%>
+                <% if (BasePage().HasPermission(NHS_Web_App.BasePage.Permissions.OPEN_QUEUE))
+                    {%>
+                <ul>
+                    <asp:ContentPlaceHolder ID="quickActions" runat="server">
+                        <li class="nhs-label">Queing Patients</li>
+                        <li class="action-btn"><a href="<%= Helper.PageAddress(Helper.Pages.QUEUE) %>">View queue</a></li>
+                    </asp:ContentPlaceHolder>
+                    <% if (BasePage().GetRole() == NHS_Web_App.BasePage.ROLES.ADMIN || BasePage().GetRole() == NHS_Web_App.BasePage.ROLES.RECEPTIONIST)
+                        { %>
+                    <li class="nhs-label">Role Actions</li>
+                    <li class="action-btn"><a href="<%= Helper.PageAddress(Helper.Pages.CREATE_APPOINTMENT) %>">New appointment</a></li>
+                    <% } %>
+                </ul>
+                <% } %>
+            </nav>
+            <asp:Panel runat="server" ID="default_msg_container" CssClass="msg-container" ClientIDMode="Static"></asp:Panel>
+            <div class="content-wrapper">
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </main>
+    </form>
+
+    <!-- #region Scripts -->
+
+    <!-- Modernizr -->
+    <script src="../js/modernizr.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js" integrity="sha256-vyehT44mCOPZg7SbqfOZ0HNYXjPKgBCaqxBkW3lh6bg=" crossorigin="anonymous"></script>
+    <script src="/js/jquery.menu-aim.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/elements.js"></script>
+    <script type="text/javascript">
+        $("li[data-page='<%=System.IO.Path.GetFileNameWithoutExtension(System.Web.HttpContext.Current.Request.Url.AbsolutePath).ToLower()%>']").addClass("active");
+    </script>
+    <!-- #endregion -->
+</body>
+</html>

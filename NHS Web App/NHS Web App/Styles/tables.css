@@ -1,0 +1,66 @@
+﻿div.tables {
+    width: 100%;
+    padding-top: 0.5em;
+    text-align: left;
+}
+
+.divTable.tables .divTableCell, .divTable.tables .divTableHead {
+    padding: 11px 7px;
+}
+
+.divTable.tables .divTableHeading {
+}
+
+    .divTable.tables .divTableHeading .divTableHead {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+.tables .tableFootStyle {
+    font-weight: bold;
+}
+/* DivTable.com */
+.divTable {
+    display: table;
+}
+
+.divTableRow {
+    display: table-row;
+    padding: 10px;
+}
+
+    .divTableRow.record {
+        cursor: pointer;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+        .divTableRow.record:hover {
+            background-color: #efefef;
+        }
+
+        .divTableRow.record:active {
+            background-color: #d3d3d3;
+        }
+
+.divTableHeading {
+    display: table-header-group;
+}
+
+.divTableCell, .divTableHead {
+    display: table-cell;
+}
+
+.divTableHeading {
+    display: table-header-group;
+}
+
+.divTableFoot {
+    display: table-footer-group;
+}
+
+.divTableBody {
+    display: table-row-group;
+}

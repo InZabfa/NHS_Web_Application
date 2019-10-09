@@ -1,0 +1,86 @@
+﻿.ticket-container {
+    height: 120px;
+    overflow-y: hidden;
+    max-height: 120px;
+    display: inline;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+    .ticket-container .ticket.seen {
+        background-color: #3f4e60;
+    }
+
+    .ticket-container .ticket.late {
+        background-color: rgb(190, 37, 37);
+    }
+
+    .ticket-container .ticket.ready {
+        background-color: rgb(124, 195, 120);
+    }
+
+    .ticket-container .ticket {
+        background-color: #005eb8;
+    }
+
+    .ticket-container .ticket {
+        -moz-animation: all 1s ease-in-out;
+        -o-animation: all 1s ease-in-out;
+        -webkit-animation: all 1s ease-in-out;
+        animation: all 1s ease-in-out;
+        /*------------*/
+        -ms-grid-row: 1;
+        grid-row: 1;
+        -ms-grid-column: 1;
+        grid-column: 1;
+        /*-------------*/
+        height: 100px;
+        width: 240px;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 5px 0;
+        margin: 0 2px;
+        color: white;
+    }
+
+        .ticket-container .ticket div.content {
+            height: 100%;
+            display: grid;
+            grid-auto-columns: auto;
+            grid-auto-rows: 30px auto auto;
+            align-items: center;
+            vertical-align: central;
+            /*------------------------*/
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0px 12px;
+        }
+
+            .ticket-container .ticket div.content span {
+                text-align: left;
+            }
+
+            .ticket-container .ticket div.content p {
+                -ms-grid-column: 1;
+                grid-column: 1;
+                -ms-grid-row: 2;
+                grid-row: 2;
+                align-self: baseline;
+                /*------------*/
+                text-align: left;
+                font-size: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .ticket-container .ticket div.content footer p {
+                -ms-grid-column: 1;
+                grid-column: 1;
+                -ms-grid-row: 3;
+                grid-row: 3;
+                /*--------------------*/
+                font-size: 12px;
+                text-transform: none;
+            }

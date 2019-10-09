@@ -1,0 +1,530 @@
+﻿.list_item {
+    display: block;
+    width: 100%;
+}
+
+    .list_item a {
+        width: 100%;
+        color: #3d3d3d;
+        display: grid;
+        padding: 5px 0px;
+    }
+
+        .list_item a:hover {
+            background-color: #3f4e60;
+            color: #ffffff;
+            -moz-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+            -webkit-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+            box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+        }
+
+        .list_item a img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .list_item a div {
+            display: grid;
+            grid-auto-columns: 42px auto 42px;
+            align-items: center;
+        }
+
+            .list_item a div div:not(.content) {
+                text-align: center;
+            }
+
+            .list_item a div div.content p {
+                margin-left: 5px;
+            }
+
+            .list_item a div div {
+                -ms-grid-column: 2;
+                grid-column: 2;
+                -ms-grid-row: 1;
+                grid-row: 1;
+                display: block;
+                width: 100%;
+            }
+
+                .list_item a div div:first-child {
+                    -ms-grid-column: 1;
+                    grid-column: 1;
+                    -ms-grid-row: 1;
+                    grid-row: 1;
+                }
+
+                .list_item a div div:last-child {
+                    -ms-grid-column: 3;
+                    grid-column: 3;
+                    -ms-grid-row: 1;
+                    grid-row: 1;
+                }
+
+div.input {
+    clear: both;
+}
+
+.button.long {
+    border: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    width: 100%;
+    display: block;
+    font-size: 0.8em;
+    text-align: left;
+    background-color: #efefef;
+    color: #3d3d3d;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 5px;
+    font: 800 0.8em "Open Sans", sans-serif !important;
+}
+
+    .button.long:not(.disabled).selected {
+        color: #ffffff;
+        background-color: #005eb8;
+    }
+
+    .button.long:not(.disabled):hover {
+        background-color: #005eb8;
+        color: #ffffff;
+        -moz-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+        -webkit-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+        box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+    }
+
+    .button.long:not(.disabled):active, .button.long:not(.disabled):focus, .button.long:not(.disabled):active:focus {
+        color: #ffffff;
+        background-color: #053e75;
+    }
+
+    .button.long:disabled {
+        background-color: #808080 !important;
+        color: #a1a1a1 !important;
+    }
+
+    .button.long.disabled {
+        background-color: #808080 !important;
+        color: #a1a1a1 !important;
+        cursor: default;
+    }
+
+.dlg-img {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.content-wrapper.noside #default_msg_container {
+    padding-top: 0;
+}
+
+#default_msg_container {
+    padding-top: 50px;
+}
+
+    #default_msg_container:empty {
+        display: none;
+        visibility: hidden;
+    }
+
+
+/*#region Message control */
+.msg {
+    background-color: #005eb8;
+    color: #ffffff;
+    -moz-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+    box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+    width: 100%;
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    position: relative;
+}
+
+    .msg .content {
+        min-height: 54px;
+        max-height: 154px;
+        grid-auto-columns: 52px auto 34px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 100%;
+        align-items: center;
+        display: grid;
+    }
+
+        .msg .content .message {
+            text-overflow: clip;
+            overflow-wrap: break-word;
+            white-space: normal;
+            overflow: hidden;
+        }
+
+    .msg .icon {
+        -ms-grid-row: 1;
+        grid-row: 1;
+        -ms-grid-column: 1;
+        grid-column: 1;
+        text-align: center;
+    }
+
+        .msg .icon svg {
+            height: 28px;
+            width: 28px;
+        }
+
+    .msg .message {
+        -ms-grid-row: 1;
+        grid-row: 1;
+        -ms-grid-column: 2;
+        grid-column: 2;
+        text-align: left;
+    }
+
+        .msg .message p span {
+            font-weight: 800;
+        }
+
+            .msg .message p span::after {
+                content: ' - ';
+                font-weight: normal;
+                display: inline;
+            }
+
+    .msg .close {
+        -ms-grid-row: 1;
+        grid-row: 1;
+        -ms-grid-column: 3;
+        grid-column: 3;
+    }
+
+        .msg .close button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #ffffff;
+            height: 24px;
+            width: 24px;
+        }
+
+            .msg .close button svg {
+                height: 100%;
+                width: 100%;
+            }
+/*#endregion */
+div.inline {
+    display: inline !important;
+}
+
+.nhs-center-header {
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: 3em;
+}
+
+    .nhs-center-header > p, .nhs-center-header > h1, .nhs-center-header > h2, .nhs-center-header > h3 {
+        text-align: center;
+    }
+
+.boxes {
+    margin: 0 auto;
+    width: auto;
+    margin-bottom: 3em;
+    display: block;
+}
+
+    .boxes .box {
+        overflow: auto;
+        overflow-y: visible;
+        overflow-x: hidden;
+        display: block;
+        width: auto;
+        background-color: #FFFFFF;
+        -moz-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+        -webkit-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+        box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+        margin: 10px 0px;
+        padding: 20px;
+    }
+
+        .boxes .box .box-header {
+            padding-bottom: 10px;
+        }
+
+            .boxes .box .box-header > h2 {
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+                font-weight: 800;
+            }
+
+            .boxes .box .box-header p {
+                font-weight: 200;
+            }
+
+            .boxes .box .box-header *:only-child, .boxes .box .box-header *:last-child {
+                border-bottom: 1px solid #808080;
+                padding-bottom: 10px;
+                margin-bottom: 0;
+            }
+
+            .boxes .box .box-header *:only-child {
+                padding-bottom: 15px;
+            }
+
+        .boxes .box.half {
+            width: 50%;
+            float: left;
+        }
+
+    .boxes .column {
+        width: auto;
+        float: left;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 5px;
+    }
+
+        .boxes .column.size30 {
+            width: 40%;
+            display: inline-block;
+        }
+
+        .boxes .column.size70 {
+            width: 60%;
+            display: inline-block;
+        }
+
+        .boxes .column.size100 {
+            width: 100%;
+            display: block;
+            float: none;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+            .boxes .column.size100 .box {
+                margin-left: auto;
+                min-height: unset;
+                margin-right: auto;
+            }
+
+.button-box {
+    -moz-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+    box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+}
+
+    .button-box .box {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+
+    .button-box .button.long {
+        background-color: #005eb8;
+        color: #ffffff;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+        .button-box .button.long:not(.disabled):hover {
+            background-color: #3d3d3d;
+        }
+
+.checkbox {
+    margin-top: 15px;
+    display: block;
+}
+
+    .checkbox input {
+        float: left;
+    }
+
+fieldset {
+    padding: 10px 0;
+    border-bottom: 1px solid #efefef;
+    float: none;
+    vertical-align: top;
+    text-align: left;
+    width: 100%;
+}
+
+    fieldset:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    fieldset span:not(.checkbox):not(.select2) {
+        /* padding-bottom: 5px; */
+        display: block;
+    }
+
+    fieldset span.select2, fieldset span.selection, fieldset span.dropdown-wrapper {
+        padding-bottom: 0;
+        display: inherit;
+    }
+
+    fieldset.half {
+        width: 50%;
+        float: left;
+        border-bottom: none;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        fieldset.half input.noleft {
+            border-left: none;
+        }
+
+        fieldset.half input, fieldset.half select {
+            padding: 0.2em;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-top: 0.6em;
+        }
+
+    fieldset label {
+        display: block;
+    }
+
+    fieldset input {
+        width: 100%;
+        margin-top: 5px;
+        display: block;
+        line-height: 1.5em;
+    }
+
+        fieldset input[type=text], fieldset input[type=number], input[type=tel], fieldset input[type=date], fieldset input[type=datetime], fieldset input[type=datetime-local], fieldset input[type=time] {
+            height: 2em;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            margin-top: 0.6em;
+            box-sizing: border-box;
+        }
+
+        fieldset input[type=checkbox] {
+            width: auto;
+            vertical-align: baseline;
+        }
+
+    fieldset span.checkbox label {
+        line-height: 1.5em;
+    }
+
+    fieldset textarea {
+        display: block;
+        width: 100%;
+        min-height: 80px;
+        margin-top: 5px;
+    }
+
+    fieldset select {
+        width: 100%;
+        padding-top: 10px;
+        display: block;
+        line-height: 10px;
+        height: 34.5px;
+        padding: 0.2em;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    fieldset .select2-container {
+        margin-top: 10px;
+    }
+
+@media only screen and (max-width: 978px) {
+    .nhs-center-header {
+        margin-top: 1em !important;
+    }
+
+    #default_msg_container {
+        padding-top: 40px !important;
+    }
+
+    .content-wrapper.noside #default_msg_container {
+        padding-top: 0 !important;
+    }
+
+    fieldset.half {
+        float: none;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #efefef;
+    }
+
+    fieldset:last-child {
+        border-bottom: 0;
+    }
+
+
+    .column.size70 {
+        width: 100% !important;
+        display: block !important;
+        overflow-y: visible;
+        overflow-x: hidden;
+        overflow: auto;
+    }
+
+    .column.size30 {
+        width: 100% !important;
+        display: block !important;
+        overflow-y: visible;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 22px !important;
+        margin: 0px !important;
+        padding-top: 24px;
+        padding-bottom: 10px;
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #default_msg_container {
+        padding-top: 50px !important;
+        margin-left: 110px;
+    }
+
+    .content-wrapper.noside #default_msg_container {
+        padding-top: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .msg .content .message p {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+
+
+@media only screen and (min-width: 1170px) {
+    #default_msg_container {
+        padding-top: 50px !important;
+        margin-left: 200px;
+    }
+
+    .content-wrapper.noside #default_msg_container {
+        padding-top: 0 !important;
+        margin-left: 0 !important;
+    }
+}

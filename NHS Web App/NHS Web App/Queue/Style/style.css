@@ -1,0 +1,123 @@
+﻿body {
+    background-color: #005eb8 !important;
+    overflow: hidden;
+}
+
+.content-wrapper.noside {
+    max-width: unset;
+}
+
+.nhs-center-header {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: #fff;
+}
+
+    .nhs-center-header h1 {
+        font-size: 24px !important;
+    }
+
+        .nhs-center-header h1 strong {
+            font-weight: 800;
+            border-bottom: 1px solid white;
+        }
+
+        .nhs-center-header h1 span:after {
+            content: ':';
+            margin-right: 10px;
+        }
+
+.column-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+    .column-container .queue_item {
+        grid-auto-rows: auto 44px;
+        color: #000;
+        background-color: #efefef;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        font-weight: 800;
+        font-size: 24px;
+        width: 100%;
+        display: grid;
+        height: 90px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+        .column-container .queue_item p {
+            vertical-align: bottom;
+            align-self: center;
+            margin-left: 10px;
+            font-weight: 800;
+            -ms-grid-row: 2;
+            grid-row: 2;
+        }
+
+        .column-container .queue_item span {
+            text-align: right;
+            -ms-grid-row: 1;
+            grid-row: 1;
+            font-weight: normal;
+        }
+
+        .column-container .queue_item.next {
+            -moz-animation: Flash infinite 1s;
+            -o-animation: Flash infinite 1s;
+            -webkit-animation: Flash infinite 1s;
+            animation: Flash infinite 1s;
+            outline: 3px solid #fff;
+        }
+
+
+@keyframes Joined {
+    from {
+        background: #efefef;
+    }
+
+    to {
+        background: #fff;
+    }
+}
+
+@-moz-keyframes Joined {
+}
+
+@-webkit-keyframes Joined {
+}
+
+@keyframes Flash {
+    0% {
+        background: #ff6a00;
+    }
+
+    100% {
+        background: #ffd0af;
+    }
+}
+
+@-moz-keyframes name {
+}
+
+@-webkit-keyframes name {
+}
+
+
+.time {
+    float: right;
+    right: 4em;
+    top: 2.1em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: #ffffff;
+    position: absolute;
+    text-align: right;
+}

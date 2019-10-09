@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHS Web App", "NHS Web App\NHS Web App.csproj", "{0743CC67-0E1D-4CC8-AAD3-34E57D292568}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NHS Management Database", "NHS Management Database\NHS Management Database.sqlproj", "{D5FD7554-B1EF-4831-8A01-0867B62E33FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{32502B87-F287-4D89-B496-5D88F2230D0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{1463E035-1759-4839-AA26-44F35C0AB561}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0743CC67-0E1D-4CC8-AAD3-34E57D292568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0743CC67-0E1D-4CC8-AAD3-34E57D292568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0743CC67-0E1D-4CC8-AAD3-34E57D292568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0743CC67-0E1D-4CC8-AAD3-34E57D292568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FD7554-B1EF-4831-8A01-0867B62E33FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FD7554-B1EF-4831-8A01-0867B62E33FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FD7554-B1EF-4831-8A01-0867B62E33FA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D5FD7554-B1EF-4831-8A01-0867B62E33FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FD7554-B1EF-4831-8A01-0867B62E33FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FD7554-B1EF-4831-8A01-0867B62E33FA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{32502B87-F287-4D89-B496-5D88F2230D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32502B87-F287-4D89-B496-5D88F2230D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32502B87-F287-4D89-B496-5D88F2230D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32502B87-F287-4D89-B496-5D88F2230D0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1463E035-1759-4839-AA26-44F35C0AB561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1463E035-1759-4839-AA26-44F35C0AB561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1463E035-1759-4839-AA26-44F35C0AB561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1463E035-1759-4839-AA26-44F35C0AB561}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1512A73E-16EF-400B-B404-FD880AD6A6C1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://group30.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NHS\u0020Management\u0020Database\\NHS\u0020Management\u0020Database.sqlproj
+		SccProjectName1 = NHS\u0020Management\u0020Database
+		SccLocalPath1 = NHS\u0020Management\u0020Database
+		SccProjectUniqueName2 = NHS\u0020Web\u0020App\\NHS\u0020Web\u0020App.csproj
+		SccProjectName2 = NHS\u0020Web\u0020App
+		SccLocalPath2 = NHS\u0020Web\u0020App
+		SccProjectUniqueName3 = BusinessObject\\BusinessObject.csproj
+		SccProjectName3 = BusinessObject
+		SccLocalPath3 = BusinessObject
+		SccProjectUniqueName4 = DataLayer\\DataLayer.csproj
+		SccProjectName4 = DataLayer
+		SccLocalPath4 = DataLayer
+	EndGlobalSection
+EndGlobal

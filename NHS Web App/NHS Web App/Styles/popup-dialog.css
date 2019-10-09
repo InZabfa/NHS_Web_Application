@@ -1,0 +1,87 @@
+﻿.dialog-behind {
+    display: none;
+}
+
+    .dialog-behind.visible {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        display: grid;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+
+        .dialog-behind.visible .dialog {
+            color: #3e454c;
+            background-color: #ffffff;
+            -moz-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+            -webkit-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+            box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+            min-height: 100px;
+            min-width: 400px;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            position: fixed;
+        }
+
+            .dialog-behind.visible .dialog .dialog-close {
+                float: right;
+                height: 28px;
+                width: 28px;
+                margin: 20px;
+                font-size: 18px;
+                background: none;
+                padding: 0;
+                outline: 0;
+                border: 0;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                cursor: pointer;
+                background: #efefef;
+                color: #3e454c;
+            }
+
+                .dialog-behind.visible .dialog .dialog-close:hover {
+                    background-color: #005eb8;
+                    color: #ffffff;
+                    -moz-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+                    -webkit-box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+                    box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+                }
+
+            .dialog-behind.visible .dialog .inner {
+                padding: 20px;
+            }
+
+                .dialog-behind.visible .dialog .inner header {
+                    margin-bottom: 15px;
+                }
+
+                    .dialog-behind.visible .dialog .inner header h2 {
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        font-size: 26px;
+                    }
+
+                .dialog-behind.visible .dialog .inner main {
+                }
+
+@media only screen and (max-width: 768px) {
+    .dialog-behind.visible .dialog {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        min-width: 0;
+    }
+}
